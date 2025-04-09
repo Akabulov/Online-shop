@@ -2,7 +2,7 @@
 
 class Catalog:
   -- Свойства --
-  1.1. catalog: List[dict]
+  1.1. catalog: List[Product]
 
   -- Методы --
   1.2. показать каталог
