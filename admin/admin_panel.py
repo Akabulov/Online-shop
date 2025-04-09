@@ -1,6 +1,6 @@
 """
 
-class Admin:
+class AdminPanel:
     -- Свойства --
     1.1. пароль
 
