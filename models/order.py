@@ -12,7 +12,7 @@ class Order:
 
 class Order:
     def __init__(self):
-        self.order_items = list()
+        self.__order_items = list()
 
     def save_order(self, user: User, filepath: str = "../cart/orders.json"):
         """ Добавляет заказ в историю заказов пользователя. """
@@ -26,7 +26,7 @@ class Order:
          except FileNotFoundError as e:
             lst = list()
 
-        for item in self.order_items:
+        for item in self.__order_items:
             lst.append({"id": item.id, "название": item.title, "цена": item.price})
              
         try:    
@@ -66,6 +66,6 @@ class Order:
 
     def _clear(self):
         """ Очищает список элементов заказа после его сохранения. """
-        self.order_items.clear()
+        self.__order_items.clear()
         
   
