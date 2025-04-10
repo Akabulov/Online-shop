@@ -14,7 +14,9 @@ from typing import List
 
 
 class Order:
-    """ Класс для одного Заказа т-в """
+    """ 
+        Класс для одного Заказа т-в
+    """
     
     def __init__(self):
         self.__order_items: List[object] = list()
