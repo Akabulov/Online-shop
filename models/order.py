@@ -10,13 +10,14 @@ class Order:
   1.4. очистить список заказа order_items (опционально) | +
 """
 import json
+from typing import List
 
 
 class Order:
     """ Класс для одного Заказа """
     
     def __init__(self):
-        self.__order_items = list()
+        self.__order_items: List[object] = list()
 
     def save_order(self, user: User, filepath: str = "../cart/orders.json") -> str:
         """ Добавляет заказ в историю заказов пользователя. """
