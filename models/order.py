@@ -16,7 +16,7 @@ class Order:
     def __init__(self):
         self.__order_items = list()
 
-    def save_order(self, user: User, filepath: str = "../cart/orders.json"):
+    def save_order(self, user: User, filepath: str = "../cart/orders.json") -> str:
         """ Добавляет заказ в историю заказов пользователя. """
         
         if user.username is None:
@@ -40,7 +40,7 @@ class Order:
             self._clear()
             raise RuntimeError(f"Ошибка при сохранении файла: {e}")
 
-    def print_orders_history(self, user: User, filepath: str = "../cart/orders.json"):
+    def print_orders_history(self, user: User, filepath: str = "../cart/orders.json") -> str:
         """ Показывает историю заказов пользователя. """
 
         if user.username is None:
@@ -66,7 +66,7 @@ class Order:
             
         return "История заказов успешно выведена!"
 
-    def _clear(self):
+    def _clear(self) -> None:
         """ Очищает список элементов заказа после его сохранения. """
         self.__order_items.clear()
         
