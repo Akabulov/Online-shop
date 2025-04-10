@@ -18,7 +18,7 @@ from utils.helpers import сheck_password
 
 
 def sign_up():
-    file_path = '../users.json'
+    file_path = 'users.json'
     data = {}
 
     if os.path.exists(file_path):
