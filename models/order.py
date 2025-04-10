@@ -57,7 +57,7 @@ class Order:
             return "Пусто"
 
         for ind, order in enumerate(orders, start=1):
-            print(f"Заказ {i} -- [", end="")
+            print(f"Заказ {ind} -- [", end="")
             for key, val in order.items():
                 print(f"{key}: {val}", end=", ")
             print("\b\b]")
