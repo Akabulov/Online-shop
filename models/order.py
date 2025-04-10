@@ -28,7 +28,7 @@ class Order:
             data = list()
 
         for item in self.order_items:
-            data.append({"id": item.id, "title": item.title, "price": item.price})
+            data.append({"id": item.id, "название": item.title, "цена": item.price})
              
         try:    
             with open(filepath, "w") as file:
