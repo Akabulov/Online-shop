@@ -16,29 +16,31 @@ class Order:
 
     # -- Методы --    
     def save_order(self, user: User, filepath: str = "../cart/orders.json"):
-        """ Добавляет заказ в историю заказов пользователя """
+        """ Добавляет заказ в историю заказов пользователя. """
         
         if user.username is None:
             return f"Сначала войдите в систему"
             
         try:
             with open(filepath, "r") as file:
-                data = json.load(file)
+                lst = json.load(file)
          except FileNotFoundError as e:
-            data = list()
+            lst = list()
 
         for item in self.order_items:
-            data.append({"id": item.id, "название": item.title, "цена": item.price})
+            lst.append({"id": item.id, "название": item.title, "цена": item.price})
              
         try:    
             with open(filepath, "w") as file:
-                json.dump(data, file, indent=4)
+                json.dump(lst, file, indent=4)
+            self._clear()
             return f"Заказ успешно добавлен в историю!"
         except Exception as e:
+            self._clear()
             raise RuntimeError(f"Ошибка при сохранении файла: {e}")
 
     def print_orders_history(self, user: User, filepath: str = "../cart/orders.json"):
-        """ Показывает историю заказов пользователя """
+        """ Показывает историю заказов пользователя. """
 
         if user.username is None:
             return f"Сначала войдите в систему"
@@ -62,5 +64,9 @@ class Order:
             print("\b\b]")
             
         return "История заказов успешно выведена!"
+
+    def _clear(self):
+        """ Очищает список элементов заказа после его сохранения. """
+        self.order_items.clear()
         
   
