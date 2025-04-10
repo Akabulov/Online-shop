@@ -1,5 +1,8 @@
 """  файл для хранения второстепенных функций  """
+
+
 def сheck_password(password):
+    """ Джабо """
     symbols_counter = 0
     upper_letters_counter = 0
     lower_letters_counter = 0
