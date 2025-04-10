@@ -11,10 +11,9 @@ class Order:
 """
 
 class Order:
-    # -- Свойства -- 
-    # ...
+    def __init__(self):
+        self.order_items = list()
 
-    # -- Методы --    
     def save_order(self, user: User, filepath: str = "../cart/orders.json"):
         """ Добавляет заказ в историю заказов пользователя. """
         
