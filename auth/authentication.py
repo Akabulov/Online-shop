@@ -10,7 +10,7 @@
 3. Авторизация(войти как администратор) -- функция доступна только после прохождения обычной авторизации. Если условие соблюдено, потребуется ввести пароль.
 
 """
-
+# Импорт нужных дополнении.
 import os
 import json
 from utils.helpers import сheck_password
@@ -18,14 +18,17 @@ from utils.helpers import сheck_password
 
 def sign_up():
     """ Джабо """
+    #Объявление пути к файлу и пустого словаря
     file_path = 'users.json'
     data = {}
-
+    #Проверка существования файла по пути 
     if os.path.exists(file_path):
+        #Открытие файла на чтение и запись его содержания в data
         with open(file_path, 'r', encoding='utf-8') as file:
             data = json.load(file)
     while True:
         login = input("Введите логин:")
+        #Проверка введенного логина в массиве ключей словаря.
         if login not in data.keys():
             break
         print('Логин занят.')
@@ -36,8 +39,10 @@ def sign_up():
         if сheck_password(password):
             break
         print('Ненадежный пароль')
+    #Добавление данных в словарь 
     data[login] = password
-
+  
+    #Открытие файла на запись и запись в него значения словаря.
     with open(file_path, 'w', encoding='utf-8') as file:
         json.dump(data, file, indent=4)
     return "Регистрация успешна!"
