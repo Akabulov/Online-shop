@@ -24,8 +24,8 @@ def сheck_password(password):
 
 
 """
-def password_fonation(password):
-    \""" Проверяет пароль на надежность. \"""
+def check_password_strength(password):
+    ''' Проверяет пароль на надежность. '''
     
     smb_counter, symbols = 0, "!@#$%^&*()-+" 
     
@@ -36,9 +36,6 @@ def password_fonation(password):
         if gs in up_letters: up_counter += 1
         if gs in low_letters: low_counter += 1
         if gs in symbols: smb_counter += 1   
-            
-    if len(password) < 8 or smb_counter == 0 or low_counter == 0 or up_counter == 0:
-        return False
         
-    return True
+    return not (smb_counter == 0 or low_counter == 0 or up_counter == 0 or len(password) < 8)
 """
