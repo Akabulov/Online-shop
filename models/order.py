@@ -13,6 +13,8 @@ import json
 
 
 class Order:
+    """ Класс для одного Заказа """
+    
     def __init__(self):
         self.__order_items = list()
 
