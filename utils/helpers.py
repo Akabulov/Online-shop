@@ -25,7 +25,7 @@ def сheck_password(password):
 
 """
 def password_fonation(password):
-    """ Проверяет пароль на надежность. """
+    \""" Проверяет пароль на надежность. \"""
     
     smb_counter, symbols = 0, "!@#$%^&*()-+" 
     
