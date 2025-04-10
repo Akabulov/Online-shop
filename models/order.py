@@ -9,6 +9,8 @@ class Order:
   1.3. показать историю заказов | +
   1.4. очистить список заказа order_items (опционально) | +
 """
+import json
+
 
 class Order:
     def __init__(self):
