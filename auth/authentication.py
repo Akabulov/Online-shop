@@ -40,3 +40,4 @@ def sign_up():
 
     with open(file_path, 'w', encoding='utf-8') as file:
         json.dump(data, file, indent=4)
+    return "Регистрация успешна!"
