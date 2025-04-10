@@ -11,3 +11,32 @@
 
 
 """
+import os
+import json
+from utils.helpers import сheck_password
+
+
+
+def sign_up():
+    file_path = '../users.json'
+    data = {}
+
+    if os.path.exists(file_path):
+        with open(file_path, 'r', encoding='utf-8') as file:
+            data = json.load(file)
+    while True:
+        login = input("Введите логин:")
+        if login not in data.keys():
+            break
+        print('Логин занят.')
+
+    while True:
+        password = input(
+            'Введите пароль(минимум: 8 символов, 1 маленькая латинская буква, 1 большая латинская буква,1 спец. символ):')
+        if сheck_password(password):
+            break
+        print('Ненадежный пароль')
+    data[login] = password
+
+    with open(file_path, 'w', encoding='utf-8') as file:
+        json.dump(data, file, indent=4)
