@@ -22,7 +22,7 @@ class Order:
         """ Добавляет заказ в историю заказов пользователя. """
         
         if user.username is None:
-            return f"Сначала войдите в систему"
+            return "Сначала войдите в систему"
             
         try:
             with open(filepath, "r") as file:
@@ -37,7 +37,7 @@ class Order:
             with open(filepath, "w") as file:
                 json.dump(lst, file, indent=4)
             self._clear()
-            return f"Заказ успешно добавлен в историю!"
+            return "Заказ успешно добавлен в историю!"
         except Exception as e:
             self._clear()
             raise RuntimeError(f"Ошибка при сохранении файла: {e}")
@@ -46,7 +46,7 @@ class Order:
         """ Показывает историю заказов пользователя. """
 
         if user.username is None:
-            return f"Сначала войдите в систему"
+            return "Сначала войдите в систему"
             
         try:
             with open(filepath, "r") as file:
