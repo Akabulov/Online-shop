@@ -17,7 +17,7 @@ from utils.helpers import сheck_password
 
 
 def sign_up():
-  """ Джабо """
+    """ Джабо """
     file_path = 'users.json'
     data = {}
 
