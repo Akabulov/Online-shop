@@ -21,21 +21,4 @@ def check_password(password):
     if symbols_counter > 0 and lower_letters_counter > 0 and upper_letters_counter > 0:
         return True
     return False
-
-
-"""
-def is_password_strong(password) -> bool:
-    ''' Проверяет пароль на надежность. '''
     
-    smb_counter, symbols = 0, "!@#$%^&*()-+" 
-    
-    upper_let, lower_let = "ABCDEFGHIJKLMNOPQRSTUVWXYZ", "abcdefghijklmnopqrstuvwxyz"  
-    up_counter, low_counter = 0, 0
-    
-    for gs in password:
-        if gs in up_letters: up_counter += 1
-        if gs in low_letters: low_counter += 1
-        if gs in symbols: smb_counter += 1   
-        
-    return not (smb_counter == 0 or low_counter == 0 or up_counter == 0 or len(password) < 8)
-"""
