@@ -24,7 +24,7 @@ def check_password(password):
 
 
 """
-def check_password_strength(password) -> bool:
+def is_password_strong(password) -> bool:
     ''' Проверяет пароль на надежность. '''
     
     smb_counter, symbols = 0, "!@#$%^&*()-+" 
