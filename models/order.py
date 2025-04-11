@@ -24,7 +24,7 @@ class Order:
         try:
             with open(filepath, "r") as file:
                 lst = json.load(file)
-         except FileNotFoundError as e:
+         except FileNotFoundError:
             lst = list()
 
         for item in self.__order_items:
@@ -49,7 +49,7 @@ class Order:
             with open(filepath, "r") as file:
                 content = file.read()
                 orders = json.load(file) if content else list()
-        except FileNotFoundError as e:
+        except FileNotFoundError:
             with open(filepath, "w") as file:
                 file.write("[]")
             return "Пусто"
