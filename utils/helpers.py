@@ -1,7 +1,7 @@
 """  файл для хранения второстепенных функций  """
 
 
-def сheck_password(password):
+def check_password(password):
     """ Джабо """
     symbols_counter = 0
     upper_letters_counter = 0
