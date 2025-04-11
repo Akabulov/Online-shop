@@ -11,15 +11,17 @@ class Order:
 """
 import json
 from typing import List
+try:
+    from product import Product
+except ImportError:
+    class Product: ...
 
 
 class Order:
-    """ 
-        Класс для одного Заказа т-в
-    """
+    """ Класс для одного Заказа товаров """
     
     def __init__(self):
-        self.__order_items: List[object] = list()
+        self.__order_items: List[Product] = list()
 
     def save_order(self, user: User, filepath: str = "../cart/orders.json") -> str:
         """ Добавляет заказ в историю заказов пользователя. """
