@@ -13,7 +13,7 @@
 # Импорт нужных дополнении.
 import os
 import json
-from utils.helpers import сheck_password
+from utils.helpers import check_password
 
 
 def sign_up():
@@ -36,7 +36,7 @@ def sign_up():
     while True:
         password = input(
             'Введите пароль(минимум: 8 символов, 1 маленькая латинская буква, 1 большая латинская буква,1 спец. символ):')
-        if сheck_password(password):
+        if check_password(password):
             break
         print('Ненадежный пароль')
     #Добавление данных в словарь 
