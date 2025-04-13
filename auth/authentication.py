@@ -28,6 +28,9 @@ def sign_up():
             data = json.load(file)
     while True:
         login = input("Введите логин:")
+        if len(login) < 8:
+            print('Слишком короткий логин')
+            continue
         #Проверка введенного логина в массиве ключей словаря.
         if login not in data.keys():
             break
