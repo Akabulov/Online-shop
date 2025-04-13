@@ -15,21 +15,6 @@ class AdminPanel:
 """
 
 
-def admin_required(func):
-    """Костя
-
-        над функциями которые принадлежат роли админа
-        пишите @admin_required
-
-    """
-    def wrapper(user, *args, **kwargs):
-        if user.role != "admin":
-            print("Доступ запрещён!")
-            return
-        return func(*args, **kwargs)
-    return wrapper
-
-
 def admin_ui():
     """ Костя """
     print(
