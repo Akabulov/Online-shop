@@ -27,7 +27,7 @@ def sign_up():
         with open(file_path, 'r', encoding='utf-8') as file:
             data = json.load(file)
     while True:
-        login = input("Введите логин:")
+        login = input("Введите логин(минимум 8 символов):")
         if len(login) < 8:
             print('Слишком короткий логин')
             continue
